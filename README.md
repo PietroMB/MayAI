@@ -2,7 +2,20 @@
 
 ![](May.png)
 
-Il prodotto ha il fine di essere installato in dei totem all'interno di un negozio per aiutare il personale, fornendo indicazioni sulla locazione dei prodotti e dando piccoli suggerimenti, permette al personale di avere più tempo da dedicare a richieste più complesse o alla gestione del magazzino.
+MayAI è un assistente virtuale che assiste i clienti in linguaggio naturale
+L’idea è di portare dentro i negozi e sugli smartphone dei clienti May, una tecnologia ad oggi applicata quasi esclusivamente online, affinchè posssa rispondere alle domande più comuni dei clienti e suggerire nuovi prodotti da scoprire e acquistare
+
+MayAI permette 3 tipi di funzionalità
+
+• *Dove si trova un prodotto?*: May restituisce la posizione del prodotto e una mappa nel negozio evidenziando la posizione 
+• *Mi dai un consiglio?*: May può fornire suggerimenti sulla base dei dati degli utenti o sui prodotti su cui sa che si vuole puntare
+• *Mi fai parlare con qualcuno?*: May permette di chiamare un membro del personale, avvertendolo via SMS e fornendogli una panoramica delle informazioni già note
+
+MayAI è stata costruita con in mente la facilità di utilizzo e l'accessibilità, in modo che chiunque, a prescindere da età, provenienza o disabilità, possa migliorare la qualità del proprio tempo all'interno degli ambienti retail
+
+### Video di presentazione
+
+[YouTube]([YouTube](https://youtu.be/j_Og_vknBq8))
 
 ### API utilizzate:
 
@@ -20,9 +33,7 @@ Il prodotto ha il fine di essere installato in dei totem all'interno di un negoz
 
 - non è possibile registrare due audio in una singola sessione (va terminata e riaperta)
 
-- c'è un bug in khttp (non dipendente da noi) che spesso fa crashare l'app
-
-
+- c'è un bug in khttp che non aspetta la risposta e va in timeout
 
 ### logica
 
@@ -32,10 +43,7 @@ Il prodotto ha il fine di essere installato in dei totem all'interno di un negoz
 
 - il server nginx contatta Dialogflow/TIM e restituisce il risultato all'app
 
-
-
 ```apacheconf
-
 #user  nobody;
 worker_processes  1;
 
@@ -89,14 +97,14 @@ http {
 
 
     # HTTPS server
-    
+
     server {
         listen       1443 ssl;
         server_name  localhost liver.mynetgear.com;
 
         ssl_certificate      /etc/letsencrypt/live/liver.mynetgear.com/fullchain.pem;
         ssl_certificate_key  /etc/letsencrypt/live/liver.mynetgear.com/privkey.pem;
-      
+
         ssl_session_cache    shared:SSL:1m;
         ssl_session_timeout  5m;
 
@@ -119,8 +127,6 @@ http {
     include servers/*;
 }
 ```
-
-
 
 ## Esempio di curl per chiamare l'API
 
@@ -145,5 +151,3 @@ curl -H 'Content-Type: application/json'  \
 | inputAudio  | è la codifica base64 della registrazione               |
 | lc          | è la lingua [it/en]                                    |
 | outputAudio | se si desidera ricevere l'output audio oltre che testo |
-
-
