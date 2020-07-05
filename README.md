@@ -17,7 +17,7 @@ Un esempio di funzionamento dell'app può essere trovato qui: [MayAI/Esempio fun
 
 ### Video di presentazione
 
-[YouTube](https://www.youtube.com/watch?v=j_Og_vknBq8&feature=youtu.be)
+### [YouTube](https://www.youtube.com/watch?v=j_Og_vknBq8&feature=youtu.be)
 
 
 
