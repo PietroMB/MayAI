@@ -4,6 +4,7 @@ import android.Manifest
 import android.annotation.SuppressLint
 import android.content.SharedPreferences
 import android.content.pm.PackageManager
+import android.media.AudioFormat
 import android.media.MediaPlayer
 import android.media.MediaRecorder
 import android.net.Uri
@@ -11,6 +12,7 @@ import android.os.Bundle
 import android.os.Environment
 import android.os.Handler
 import android.os.StrictMode
+import android.provider.Settings
 import android.util.Base64
 import android.view.MotionEvent
 import android.view.View
@@ -19,18 +21,22 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
+import khttp.responses.Response
 import kotlinx.android.synthetic.main.activity_main.*
+import org.json.JSONObject
 import java.io.File
-import java.io.FileOutputStream
 import java.io.IOException
+
 
 class MainActivity : AppCompatActivity() {
     private var output: String? = null
     private var mediaRecorder: MediaRecorder? = null
+    private var user_sid: Long? = null
     private var state: Boolean = false
     private var PRIVATE_MODE = 0
     private val PREF_NAME = "language"
 
+    private var deviceID: String? = null
 
     @SuppressLint("ClickableViewAccessibility")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -42,6 +48,7 @@ class MainActivity : AppCompatActivity() {
         editor.putString(PREF_NAME, "it")
         editor.apply()
 
+        //  BAD practice, io operations shoud be in separate thread
         val policy =
             StrictMode.ThreadPolicy.Builder().permitAll().build()
 
@@ -57,37 +64,19 @@ class MainActivity : AppCompatActivity() {
         }
 
         /*Configuring Media Recorder*/
-        output = Environment.getExternalStorageDirectory().absolutePath + "/recording.mp3"
+        output = Environment.getExternalStorageDirectory().absolutePath + "/recording.wav"
         mediaRecorder = MediaRecorder()
+        deviceID = Settings.Secure.getString(contentResolver, Settings.Secure.ANDROID_ID)
 
         mediaRecorder?.setAudioSource(MediaRecorder.AudioSource.MIC)
-        mediaRecorder?.setOutputFormat(MediaRecorder.OutputFormat.MPEG_4)
-        mediaRecorder?.setAudioEncoder(MediaRecorder.AudioEncoder.AAC)
+        mediaRecorder?.setOutputFormat(AudioFormat.ENCODING_PCM_16BIT);
+        mediaRecorder?.setAudioEncoder(MediaRecorder.AudioEncoder.AAC);
+        mediaRecorder?.setAudioChannels(1);
+        mediaRecorder?.setAudioEncodingBitRate(128000);
+        mediaRecorder?.setAudioSamplingRate(16000);
         mediaRecorder?.setOutputFile(output)
 
         scriviQui.visibility = View.INVISIBLE
-
-        /*For debug only start*/
-//        val h = Handler()
-//        System.out.println("############################################")
-//        val outb = h.convertToBase64(File("/storage/emulated/0/test.mp3"))
-//        val root = Environment.getExternalStorageDirectory().toString()
-//        val myDir = File(root)
-//        val file = File(myDir, "test.txt")
-//        if (file.exists()) file.delete()
-//        try {
-//            file.writeText(outb)
-//        } catch (e: Exception) {
-//            e.printStackTrace()
-//        }
-//
-//        //save response
-//        val jsonIN = File("/storage/emulated/0/test.json").readText()
-//        h.getJSONdata(jsonIN)
-//
-//
-//        PlayResponse()
-        /*For debug only stop*/
 
         Thread{
             System.out.println("Here I am")
@@ -102,10 +91,10 @@ class MainActivity : AppCompatActivity() {
             when (event.action) {
                 MotionEvent.ACTION_DOWN -> {
                     if (ContextCompat.checkSelfPermission(this,
-                    Manifest.permission.RECORD_AUDIO) != PackageManager.PERMISSION_GRANTED && ContextCompat.checkSelfPermission(this,
-                    Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
-                    val permissions = arrayOf(android.Manifest.permission.RECORD_AUDIO, android.Manifest.permission.WRITE_EXTERNAL_STORAGE, android.Manifest.permission.READ_EXTERNAL_STORAGE)
-                    ActivityCompat.requestPermissions(this, permissions,0)
+                            Manifest.permission.RECORD_AUDIO) != PackageManager.PERMISSION_GRANTED && ContextCompat.checkSelfPermission(this,
+                            Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
+                        val permissions = arrayOf(android.Manifest.permission.RECORD_AUDIO, android.Manifest.permission.WRITE_EXTERNAL_STORAGE, android.Manifest.permission.READ_EXTERNAL_STORAGE)
+                        ActivityCompat.requestPermissions(this, permissions,0)
                     } else {
                         TestRecord.setBackgroundResource(R.drawable.mic_r)
                         May.setImageResource(R.drawable.face_listening)
@@ -118,8 +107,8 @@ class MainActivity : AppCompatActivity() {
                     TestRecord.setBackgroundResource(R.drawable.mic_in)
                     May.setImageResource(R.drawable.face_muted)
                     val lin = sharedPref.getString(PREF_NAME, "it")
-
                     SendJSONaudio(lin.toString())
+                    //script()
                 }
             }
             false
@@ -132,12 +121,10 @@ class MainActivity : AppCompatActivity() {
         language.setOnClickListener {
             if(sharedPref.getString(PREF_NAME,"it") == "it"){
                 editor.putString(PREF_NAME,"en")
-                editor.apply()
                 language.setImageResource(R.drawable.uk)
                 chat.setText(R.string.wellcome_en)
             }else{
                 editor.putString(PREF_NAME,"it")
-                editor.apply()
                 language.setImageResource(R.drawable.it)
                 chat.setText(R.string.wellcome_it)
             }
@@ -171,16 +158,15 @@ class MainActivity : AppCompatActivity() {
     private fun stopRecording(){
         try {
             mediaRecorder?.stop()
-            //mediaRecorder?.release()
             mediaRecorder?.reset()
             state = false
-            Toast.makeText(this, "Recorded", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Registrato", Toast.LENGTH_SHORT).show()
         } catch (e: IllegalStateException) {
             e.printStackTrace()
-            Toast.makeText(this, "C'è stato un errore", Toast.LENGTH_LONG).show()
+            //Toast.makeText(this, "C'è stato un errore", Toast.LENGTH_LONG).show()
         } catch (e: IOException) {
             e.printStackTrace()
-            Toast.makeText(this, "C'è stato un errore", Toast.LENGTH_LONG).show()
+            //Toast.makeText(this, "C'è stato un errore", Toast.LENGTH_LONG).show()
         }
     }
 
@@ -202,24 +188,47 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun PlayResponse(){
-        var mediaPlayer: MediaPlayer? = MediaPlayer.create(this, Uri.parse(Environment.getExternalStorageDirectory().toString()+"/response.mp3"))
+        var mediaPlayer: MediaPlayer? = MediaPlayer.create(this, Uri.parse(Environment.getExternalStorageDirectory().toString()+"/response.wav"))
         mediaPlayer?.start()
     }
 
     private fun SendJSONaudio(lingua: String){
-        val richiesta = Base64.encodeToString(File("/storage/emulated/0/recording.mp3").readBytes(), Base64.NO_WRAP)
-        val iid = "123456"
-        val sid = 123456789987
+        if (user_sid == null) user_sid = System.currentTimeMillis() //  anche se passati x secondi dall'ultima registrazione
+        val richiesta = Base64.encodeToString(File(output).readBytes(), Base64.NO_WRAP)
+        val iid = deviceID
+        val sid = user_sid
         val text = null
         val lc = lingua
         val outputAudio = false
+        val authToken = "auth.TODO"
 
-        val response = khttp.post(
-            url = "https://liver.mynetgear.com:1443/api/v1/detectIntent",
-            json = mapOf("iid" to iid, "sid" to sid, "text" to text, "inputAudio" to richiesta, "lc" to lc, "outputAudio" to outputAudio)
-        )
+        try {
+            val response : Response = khttp.post(
+                url = "https://liver.mynetgear.com:1443/api/v1/detectIntent",
+                headers = mapOf("Content-Type" to "application/json", "'Authorization" to authToken),
 
-        System.out.println("---------------------------------------------\n"+response.text)
-        System.out.println("\n"+response.statusCode)
+                json = mapOf(
+                    "iid" to iid,
+                    "sid" to sid,
+                    "text" to text,
+                    "inputAudio" to richiesta,
+                    "lc" to lc,
+                    "outputAudio" to outputAudio
+                )
+            )
+            val jsonObj  : JSONObject = response.jsonObject
+            val fulfillmentText: String = jsonObj.getString("fulfillmentText")
+            val imageProdUri: String    = jsonObj.getString("imageProdUri")
+            val imageLocUri: String     = jsonObj.getString("imageLocUri")
+            val outputAudio: String     = jsonObj.getString("outputAudio")
+
+            chat.setText(fulfillmentText)
+
+        } catch (e: Exception) {
+            e.printStackTrace()
+            //Toast.makeText(this, "C'è stato un errore", Toast.LENGTH_LONG).show()
+        }
     }
+
+
 }
