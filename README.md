@@ -121,3 +121,29 @@ http {
 ```
 
 
+
+## Esempio di curl per chiamare l'API
+
+```shell
+curl -H 'Content-Type: application/json'  \
+-H 'Authorization: auth.TODO' \
+-X POST https://liver.mynetgear.com:1443/api/v1/detectIntent -d \
+'{
+    "iid" : "123456",
+    "sid" : 1593767927000,
+    "text": "Devo festeggiare un compleanno",
+    "inputAudio" : null,
+    "lc"  : "it",
+    "outputAudio" : true
+}'
+```
+
+| iid         | id univoco applicazione                                |
+| ----------- | ------------------------------------------------------ |
+| sid         | timestamp millisecondi da prima richiesta              |
+| text        | deve essere null de è popolato inputAudio              |
+| inputAudio  | è la codifica base64 della registrazione               |
+| lc          | è la lingua [it/en]                                    |
+| outputAudio | se si desidera ricevere l'output audio oltre che testo |
+
+
