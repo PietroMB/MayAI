@@ -1,0 +1,57 @@
+{
+  "id": "90b157c1-4c74-4a68-89f1-f87e39756011",
+  "name": "seekHelp",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "affectedContexts": [],
+      "parameters": [
+        {
+          "id": "e66d17d0-7c43-4d4e-8d01-302dea85b83e",
+          "required": true,
+          "dataType": "@sys.given-name",
+          "name": "name",
+          "value": "$name",
+          "prompts": [
+            {
+              "lang": "it",
+              "value": "Mi indicheresti il tuo nome?"
+            },
+            {
+              "lang": "it",
+              "value": "Volentieri! Qual è il tuo nome?"
+            }
+          ],
+          "promptMessages": [],
+          "noMatchPromptMessages": [],
+          "noInputPromptMessages": [],
+          "outputDialogContexts": [],
+          "isList": false
+        }
+      ],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "it",
+          "condition": "",
+          "speech": [
+            "Perfetto $name ! Un membro del personale ti raggiungerà qui a breve per aiutarti!",
+            "Va bene! L\u0027addetto al reparto ti raggiungerà qui tra pochissimo, $name!"
+          ]
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": true,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": [],
+  "conditionalResponses": [],
+  "condition": "",
+  "conditionalFollowupEvents": []
+}

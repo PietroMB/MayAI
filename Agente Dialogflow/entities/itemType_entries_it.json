@@ -1,0 +1,45 @@
+[
+  {
+    "value": "dolce",
+    "synonyms": [
+      "dolce",
+      "dolci",
+      "compleanno",
+      "laurea"
+    ]
+  },
+  {
+    "value": "leggero",
+    "synonyms": [
+      "leggero",
+      "salutare",
+      "per dimagrire"
+    ]
+  },
+  {
+    "value": "cena",
+    "synonyms": [
+      "grigliata",
+      "stasera",
+      "alla griglia",
+      "proteico"
+    ]
+  },
+  {
+    "value": "pranzo",
+    "synonyms": [
+      "tradizionale",
+      "primo piatto",
+      "tradizione",
+      "pranzo"
+    ]
+  },
+  {
+    "value": "salato",
+    "synonyms": [
+      "salato",
+      "salati",
+      "salatini"
+    ]
+  }
+]

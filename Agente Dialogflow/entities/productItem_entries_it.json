@@ -1,0 +1,68 @@
+[
+  {
+    "value": "uova",
+    "synonyms": [
+      "uova",
+      "uovo"
+    ]
+  },
+  {
+    "value": "verdura",
+    "synonyms": [
+      "verdura",
+      "sedano",
+      "broccoli",
+      "broccolo",
+      "cavolo",
+      "carote",
+      "verdure",
+      "fibre"
+    ]
+  },
+  {
+    "value": "carne",
+    "synonyms": [
+      "prosciutto",
+      "salumi",
+      "salame",
+      "salume",
+      "carni"
+    ]
+  },
+  {
+    "value": "pasta",
+    "synonyms": [
+      "pasta",
+      "spaghetti",
+      "bucatini",
+      "orecchiette",
+      "tagliatelle",
+      "tortellini"
+    ]
+  },
+  {
+    "value": "pesce",
+    "synonyms": [
+      "pesce",
+      "merluzzo",
+      "salmone"
+    ]
+  },
+  {
+    "value": "torte",
+    "synonyms": [
+      "cioccolata",
+      "dolci",
+      "snack",
+      "torta",
+      "torte"
+    ]
+  },
+  {
+    "value": "pizza",
+    "synonyms": [
+      "pizza",
+      "pizzette"
+    ]
+  }
+]

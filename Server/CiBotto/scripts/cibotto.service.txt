@@ -1,0 +1,22 @@
+[Unit]
+Description=cibotto service script 1.0.1
+
+[Service]
+RemainAfterExit=no
+WorkingDirectory=/home/ubuntu/mayai
+Environment="JAVA_HOME=/Library/Java/JavaVirtualMachines/adoptopenjdk-12.jdk/Contents/Home"
+Environment="PATH=/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:$JAVA_HOME/bin"
+ExecStart=$JAVA_HOME/bin/java -jar /home/ubuntu/mayai/cibotto.jar
+
+Restart=always
+RestartSec=90
+StartLimitInterval=400
+StartLimitBurst=3
+
+User=ubuntu
+Group=ubuntu
+
+[Install]
+WantedBy=multi-user.target
+
+# log # sudo journalctl -u cibotto| tail

@@ -1,0 +1,47 @@
+{
+  "id": "7c2d5a28-5e64-4fba-b8c3-5b419092b4f0",
+  "name": "BasicInfo",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "affectedContexts": [],
+      "parameters": [
+        {
+          "id": "b97d9ccf-6246-43b8-8139-60d7bd610768",
+          "required": false,
+          "dataType": "@sys.number",
+          "name": "number",
+          "value": "$number",
+          "promptMessages": [],
+          "noMatchPromptMessages": [],
+          "noInputPromptMessages": [],
+          "outputDialogContexts": [],
+          "isList": false
+        }
+      ],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "it",
+          "condition": "",
+          "speech": [
+            "Sono May AI, la tua shopping assistant! Di cosa hai bisogno?",
+            "Mi chiamo May AI, puoi chiedermi dove trovare i nostri prodotti o suggerirti il vestito perfetto per un\u0027occasione!"
+          ]
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": [],
+  "conditionalResponses": [],
+  "condition": "",
+  "conditionalFollowupEvents": []
+}

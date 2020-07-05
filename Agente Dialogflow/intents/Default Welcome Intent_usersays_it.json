@@ -1,0 +1,112 @@
+[
+  {
+    "id": "1c6d439a-f35f-44cf-9eef-ec8f7ba49cf8",
+    "data": [
+      {
+        "text": "Buongiorno",
+        "alias": "geo-city",
+        "meta": "@sys.geo-city",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "ae5c57a3-c1d2-4ea7-88e9-5648ecaeca14",
+    "data": [
+      {
+        "text": "ciao",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "be0f48ea-cac5-4057-b8f3-985135b56c78",
+    "data": [
+      {
+        "text": "ciao ciao",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "e75dc17a-29e4-41a3-abc6-6b90074b63fa",
+    "data": [
+      {
+        "text": "ciao bello",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "32b5b3bd-eb24-4d6e-b189-0704612afa6b",
+    "data": [
+      {
+        "text": "ciao bella",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "296207d9-0fad-4fc2-9970-8b999934f018",
+    "data": [
+      {
+        "text": "ciao caro",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "1014b573-7f9a-4b0b-adc3-77e9c14c08a2",
+    "data": [
+      {
+        "text": "ciao cara",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "2bc0bfd1-d46a-4759-acaf-b755bf249edd",
+    "data": [
+      {
+        "text": "salve",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "2318d40c-2178-4fce-8ff7-164e35199273",
+    "data": [
+      {
+        "text": "ehi",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  }
+]

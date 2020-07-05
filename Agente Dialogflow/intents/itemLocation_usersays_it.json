@@ -1,0 +1,211 @@
+[
+  {
+    "id": "45f84391-23b3-4356-903b-65daf8d2dd96",
+    "data": [
+      {
+        "text": "Dov\u0027",
+        "userDefined": false
+      },
+      {
+        "text": "è",
+        "meta": "@sys.ignore",
+        "userDefined": false
+      },
+      {
+        "text": " la ",
+        "userDefined": false
+      },
+      {
+        "text": "verdura",
+        "alias": "productItem",
+        "meta": "@productItem",
+        "userDefined": false
+      },
+      {
+        "text": "?",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "55165269-8906-488a-a6b8-1631ba6774f4",
+    "data": [
+      {
+        "text": "Mi servirebbe ",
+        "userDefined": false
+      },
+      {
+        "text": "un",
+        "meta": "@sys.ignore",
+        "userDefined": false
+      },
+      {
+        "text": " ",
+        "userDefined": false
+      },
+      {
+        "text": "uovo",
+        "alias": "productItem",
+        "meta": "@productItem",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "2a2985f6-f45c-46fe-a40a-fd24a92be71f",
+    "data": [
+      {
+        "text": "Sto cercando il ",
+        "userDefined": false
+      },
+      {
+        "text": "pomodoro",
+        "alias": "productItem",
+        "meta": "@productItem",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "b171a12a-cfe9-4906-802e-75c955ba67e2",
+    "data": [
+      {
+        "text": "Mi",
+        "meta": "@sys.ignore",
+        "userDefined": false
+      },
+      {
+        "text": " servirebbero degli ",
+        "userDefined": false
+      },
+      {
+        "text": "snack",
+        "alias": "productItem",
+        "meta": "@productItem",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "d5a4c3a1-5d7a-44d0-bb98-9d7ddebe6526",
+    "data": [
+      {
+        "text": "Non trovo il ",
+        "userDefined": false
+      },
+      {
+        "text": "pesce",
+        "alias": "productItem",
+        "meta": "@productItem",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "312ff5ce-696d-4dce-9ac8-6717188801f3",
+    "data": [
+      {
+        "text": "In",
+        "meta": "@sys.ignore",
+        "userDefined": false
+      },
+      {
+        "text": " che corsia trovo la ",
+        "userDefined": false
+      },
+      {
+        "text": "pasta",
+        "alias": "productItem",
+        "meta": "@productItem",
+        "userDefined": false
+      },
+      {
+        "text": "?",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "011cc9d1-f5f3-4348-acad-d515274dceed",
+    "data": [
+      {
+        "text": "Dove sono i ",
+        "userDefined": false
+      },
+      {
+        "text": "salumi",
+        "alias": "productItem",
+        "meta": "@productItem",
+        "userDefined": false
+      },
+      {
+        "text": "?",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "156def27-f8bb-4fbf-842c-bef9b45a7bce",
+    "data": [
+      {
+        "text": "Non trovo ",
+        "userDefined": false
+      },
+      {
+        "text": "un",
+        "meta": "@sys.ignore",
+        "userDefined": false
+      },
+      {
+        "text": " prodotto",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "55757347-bd93-4378-8ad8-24f3bac30fd9",
+    "data": [
+      {
+        "text": "Dove sono gli ",
+        "userDefined": false
+      },
+      {
+        "text": "spaghetti",
+        "alias": "productItem",
+        "meta": "@productItem",
+        "userDefined": false
+      },
+      {
+        "text": "?",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  }
+]
