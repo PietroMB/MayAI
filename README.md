@@ -39,7 +39,7 @@ Un esempio di funzionamento dell'app può essere trovato qui: [MayAI/Esempio fun
 
 - c'è un bug in khttp che non sempre risponde correttamente
 
-### logica
+### Logica
 
 - l'utente registra un audio
 
