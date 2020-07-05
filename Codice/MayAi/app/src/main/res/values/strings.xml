@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">MayAi</string>
+    <string name="wellcome_it">Ciao! Non sai dove trovare un prodotto o hai bisogno di un consiglio? Chiedi pure!</string>
+    <string name="wellcome_en">Hi! You don’t know what to buy or you can’t find it? Ask me!</string>
+</resources>

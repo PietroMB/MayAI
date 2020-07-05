@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/costaint"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/May"
+        android:layout_width="600dp"
+        android:layout_height="600dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/face_welcome" />
+
+    <TextView
+        android:id="@+id/chat"
+        android:layout_width="400dp"
+        android:layout_height="150dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="48dp"
+        android:text="@string/wellcome_it"
+        android:textColor="@color/black"
+        android:textSize="28sp"
+        app:layout_constraintStart_toEndOf="@+id/May"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/TestRecord"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="32dp"
+        android:background="@drawable/mic_in"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <Button
+        android:id="@+id/keyboard"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="456dp"
+        android:layout_marginBottom="32dp"
+        android:background="@drawable/keyboard"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/scriviQui"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="176dp"
+        android:layout_marginTop="32dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Scrivi qui"
+        app:layout_constraintStart_toEndOf="@+id/May"
+        app:layout_constraintTop_toBottomOf="@+id/chat"
+        tools:visibility="visible" />
+
+    <ImageView
+        android:id="@+id/language"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginBottom="32dp"
+        android:contentDescription="itlan"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/it" />
+
+    <ImageView
+        android:id="@+id/deaf"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginBottom="32dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/language"
+        app:srcCompat="@drawable/deaf" />
+
+    <WebView
+        android:id="@+id/img"
+        android:layout_width="450dp"
+        android:layout_height="250dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintStart_toEndOf="@+id/May"
+        app:layout_constraintTop_toBottomOf="@+id/scriviQui" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
