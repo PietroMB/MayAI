@@ -15,11 +15,11 @@ MayAI è stata costruita con in mente la facilità di utilizzo e l'accessibilit�
 
 Un esempio di funzionamento dell'app può essere trovato qui: [MayAI/Esempio funzionamento](https://github.com/PietroMB/MayAI/blob/master/Esempio%20funzionamento.mp4) 
 
-## Video di presentazione
+### Video di presentazione
 
 ***[YouTube](https://www.youtube.com/watch?v=j_Og_vknBq8&feature=youtu.be)***
 
-
+---
 
 ### API utilizzate:
 
