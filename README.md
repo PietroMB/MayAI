@@ -37,7 +37,7 @@ Un esempio di funzionamento dell'app può essere trovato qui: [MayAI/Esempio fun
 
 - non è possibile registrare due audio in una singola sessione (va terminata e riaperta)
 
-- c'è un bug in khttp che non aspetta la risposta e va in timeout
+- c'è un bug in khttp che non sempre risponde correttamente
 
 ### logica
 
