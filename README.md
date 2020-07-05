@@ -13,6 +13,12 @@ MayAI permette 3 tipi di funzionalità
 
 MayAI è stata costruita con in mente la facilità di utilizzo e l'accessibilità, in modo che chiunque, a prescindere da età, provenienza o disabilità, possa migliorare la qualità del proprio tempo all'interno degli ambienti retail
 
+
+
+Un esempio di funzionamento dell'app può essere trovato qui: [MayAI/Esempio funzionamento.mp4 at master · PietroMB/MayAI · GitHub](https://github.com/PietroMB/MayAI/blob/master/Esempio%20funzionamento.mp4) 
+
+
+
 ### Video di presentazione
 
 [YouTube]([YouTube](https://youtu.be/j_Og_vknBq8))
