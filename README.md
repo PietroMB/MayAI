@@ -2,16 +2,21 @@
 
 ![](May.png)
 
-MayAI è un assistente virtuale che assiste i clienti in linguaggio naturale
-L’idea è di portare dentro i negozi e sugli smartphone dei clienti May, una tecnologia ad oggi applicata quasi esclusivamente online, affinchè posssa rispondere alle domande più comuni dei clienti e suggerire nuovi prodotti da scoprire e acquistare
+How MayAI help you?
+
+MayAI è un assistente virtuale che assiste i clienti in linguaggio naturale basato sulle API di Google DialogFlow. L’idea è di portare dentro i negozi e sugli smartphone dei clienti May, una tecnologia ad oggi applicata quasi esclusivamente online, affinchè posssa rispondere alle domande più comuni dei clienti e suggerire nuovi prodotti da scoprire e acquistare
 
 MayAI permette 3 tipi di funzionalità
 
-• *Dove si trova un prodotto?*: May restituisce la posizione del prodotto e una mappa nel negozio evidenziando la posizione 
-• *Mi dai un consiglio?*: May può fornire suggerimenti sulla base dei dati degli utenti o sui prodotti su cui sa che si vuole puntare
-• *Mi fai parlare con qualcuno?*: May permette di chiamare un membro del personale, avvertendolo via SMS e fornendogli una panoramica delle informazioni già note
+• Dove si trova un prodotto?: May restituisce la posizione del prodotto e una mappa nel negozio evidenziando la posizione
 
-MayAI è stata costruita con in mente la facilità di utilizzo e l'accessibilità, in modo che chiunque, a prescindere da età, provenienza o disabilità, possa migliorare la qualità del proprio tempo all'interno degli ambienti retail
+• Mi dai un consiglio?: May può fornire suggerimenti sulla base dei dati degli utenti o sui prodotti su cui sa che si vuole puntare
+
+• Mi fai parlare con qualcuno?: May permette di chiamare un membro del personale, avvertendolo via SMS e fornendogli una panoramica delle informazioni già note
+
+MayAI è stata costruita con in mente la facilità di utilizzo e l'accessibilità, in modo che chiunque, a prescindere da età, provenienza o disabilità, possa migliorare la qualità del proprio tempo all'interno degli ambienti retail.
+
+Il sistema si dimostra inoltre particolarmente efficace a rispondere all'esigenza di mantenere il distanziamento sociale durante emergenze sanitarie come quella in corso.
 
 Un esempio di funzionamento dell'app può essere trovato qui: [MayAI/Esempio funzionamento](https://github.com/PietroMB/MayAI/blob/master/Esempio%20funzionamento.mp4) 
 
